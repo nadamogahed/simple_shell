@@ -6,7 +6,7 @@
  * Return: 0 on normal execution, error code on exit due to error
  */
 
-int process_line(int argc, char *argv[], char *buffer)
+int process_line(char *argv[], char *buffer)
 {
 	char **token, *temp = NULL;
 	int i = 0, result;
@@ -36,18 +36,18 @@ int process_line(int argc, char *argv[], char *buffer)
 		temp = append_path(token[0]);
 		if (temp == NULL)
 		{
-			print_error(argc , argv, token);
+			print_error(argv, token);
 			free(token); /* Handle error */
 			return (127);
 		}
 		token[0] = NULL;
 		token[0] = temp;
 	}
-	result = _exe(argc, argv, token);
+	result = _exe(argv, token);
 	if(temp != NULL)
 	{
-	    free(temp); // Free temp here
-	    temp = NULL; // Set temp to NULL after freeing
+	    free(temp); /* Free temp here */
+	    temp = NULL; /* Set temp to NULL after freeing */
     }
 	free(token);
 	return (result);

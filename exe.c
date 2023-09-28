@@ -7,7 +7,7 @@
  * If the command fails, it prints an error message and exits.
  * Return: -1 on fail
  */
-int _exe(int argc, char *argv[], char **args)
+int _exe(char *argv[], char **args)
 {
 	int child, status, exit_status;
 
@@ -24,7 +24,7 @@ int _exe(int argc, char *argv[], char **args)
 		{
 			if (execve(args[0], args, environ) == -1)
 			{
-				print_error(argc , argv, args);
+				print_error(argv, args);
 				return (127);
 			}
 		}

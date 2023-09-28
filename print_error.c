@@ -4,7 +4,7 @@
  * @string: an arry pointer
  * Return: void
  */
-int print_error(int argc ,char *argv[], char **token)
+int print_error(char *argv[], char **token)
 {
 	int re = 0;
 

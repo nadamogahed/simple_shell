@@ -14,7 +14,6 @@ extern char **environ;
 
 int _atoi(char *str);
 char *append_path(char *args);
-void free_args(char **args);
 char *getpath(char *name);
 int print_string(char *string);
 
@@ -26,10 +25,13 @@ int _strncmp(char *str_1, char *str_2, int len);
 char *_strcat(char *str_1, char *str_2);
 char *_strdup(char *str_1);
 
-int print_error(int argc ,char *argv[], char **token);
+int print_error(char *argv[], char **token);
 
 void exit_func(char **args, char *buffer);
 void print_env(void);
-int _exe(int argc, char *argv[], char **args);
-int process_line(int argc, char *argv[], char *buffer);
+int _exe(char *argv[], char **args);
+int process_line(char *argv[], char *buffer);
+
+int interactive(char *argv[]);
+int non_interactive(char *argv[]);
 #endif
