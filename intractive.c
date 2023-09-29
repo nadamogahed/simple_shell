@@ -15,7 +15,7 @@ int interactive(char *argv[])
 	while (1)
 	{
 		write(STDOUT_FILENO, "$ ", 2);
-		ret = getline(&buffer, &n, stdin);
+		ret = readline(&buffer, &n, STDIN_FILENO);
 		if (ret == -1 || ret == EOF || ret == 0)
 		{
 			free(buffer);
