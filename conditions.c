@@ -5,7 +5,6 @@
  *
  * Return: 0 on normal execution, error code on exit due to error
  */
-
 int process_line(char *argv[], char *buffer)
 {
 	char **token, *temp = NULL;
@@ -44,11 +43,11 @@ int process_line(char *argv[], char *buffer)
 		token[0] = temp;
 	}
 	result = _exe(argv, token);
-	if(temp != NULL)
+	if (temp != NULL)
 	{
-	    free(temp); /* Free temp here */
-	    temp = NULL; /* Set temp to NULL after freeing */
-    }
+		free(temp); /* Free temp here */
+		temp = NULL; /* Set temp to NULL after freeing */
+	}
 	free(token);
 	return (result);
 }
