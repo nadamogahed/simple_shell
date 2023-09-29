@@ -15,6 +15,7 @@ void exit_func(char **args, char *buffer)
 	free(buffer);
 	_exit(ex);
 }
+
 /**
  * print_env - Prints the environment variables
  *

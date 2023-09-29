@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * process_line - Processes a line of input
+ * @argv: An array of pointers to the arguments
  * @buffer: The line of input to process
  *
  * Return: 0 on normal execution, error code on exit due to error
@@ -43,11 +44,8 @@ int process_line(char *argv[], char *buffer)
 		token[0] = temp;
 	}
 	result = _exe(argv, token);
-	if (temp != NULL)
-	{
-		free(temp); /* Free temp here */
-		temp = NULL; /* Set temp to NULL after freeing */
-	}
+	free(temp); /* Free temp here */
+	temp = NULL; /* Set temp to NULL after freeing */
 	free(token);
 	return (result);
 }
