@@ -13,16 +13,19 @@ int process_line(char *argv[], char *buffer)
 
 	token = malloc(1024 * sizeof(char *));
 	token[0] = strtok(buffer, " \n");
+	/* check if the token is null or not */
 	while (token[i] != NULL)
 	{
 		i++;
 		token[i] = strtok(NULL, " \n");
 	}
+	/* if the first element is null free the token array */
 	if (token[0] == NULL)
 	{
 		free(token);
 		return (0);
 	}
+	/* check if first element in token is exit, env, / */
 	if (_strncmp(token[0], "exit", 4) == 0)
 		exit_func(token, buffer);
 	else if (_strncmp(token[0], "env", 3) == 0)

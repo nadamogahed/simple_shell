@@ -12,6 +12,7 @@ int interactive(char *argv[])
 	ssize_t ret;
 	int result;
 
+	/* working in interactive mode */
 	while (1)
 	{
 		write(STDOUT_FILENO, "$ ", 2);

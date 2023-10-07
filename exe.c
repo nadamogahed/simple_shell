@@ -13,6 +13,7 @@ int _exe(char *argv[], char **args)
 	int child, status, exit_status;
 
 	child = fork();
+	/* check if the child is 0-execute or -1-error or else-wait */
 	if (child == -1)
 	{
 		perror("fork");
